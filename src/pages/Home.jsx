@@ -12,10 +12,11 @@ function Home() {
 
   const getAllWebsites = () => {
     axios
-      .post(`${url}&api_key=${apiKey}`)
+      .post(`${url}&api_key=${apiKey}&logs=1`)
       .then((response) => {
         const allWebsites = response.data.monitors;
         setWebsites(allWebsites);
+        console.log(response.data);
       })
       .catch((error) => console.log(error));
   };

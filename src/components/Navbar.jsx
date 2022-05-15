@@ -1,8 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
 
 function Navbar(props) {
-  const [status, setStatus] = useState(false);
 
   const websites = props.websites;
 
@@ -21,10 +19,9 @@ function Navbar(props) {
   return (
     <>
       <div className="header">
-        <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           There are {websitesUp} sites up and {websitesDown} sites down!
-        </div>
       </div>
+      <div className="title text-white text-center mt-5">Digitizers Web Dashboard</div>
     </>
   );
 }
