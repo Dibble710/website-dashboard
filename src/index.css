@@ -5,9 +5,68 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #2D3E50;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+background: #fff;
+}
+
+.website-card {
+  padding: 20px;
+  border-radius: 10px;
+  transition: .5s ease;
+  cursor: pointer;
+}
+
+.website-card:hover {
+  transform: scale(.98);
+}
+
+.website-card .client {
+  background: #2D3E50;
+  border-radius: 50%;
+  height: 85px;
+  width: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  text-align: center;
+
+}
+
+.status-circle {
+  width: 20px;
+  height: auto;
+  background: #00BF2A;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.status-circle:hover:after {
+  content: 'Tooltip concept';
+  position: absolute;
+  padding: 1rem;
+  right: 0;
+  top: 0;
+  margin-right: 2rem;
+  width: 150px;
+  background-color: #2D3E50;
+  color: #fff;
+  border-radius: 5px;
 }
