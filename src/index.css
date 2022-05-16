@@ -14,7 +14,11 @@ code {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
+}
+
+.text-center {
+  text-align: center !important;
 }
 
 .title {
