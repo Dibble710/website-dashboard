@@ -63,10 +63,14 @@ a {
   text-align: center;
 }
 
-.status-2 {
+.status-red {
+  background: red !important;
+}
+
+.status-red.status-2 {
   width: 20px;
   height: auto;
-  background: #00bf2a;
+  background: #00bf2a !important;
   border-radius: 50%;
   display: flex;
   justify-content: center;

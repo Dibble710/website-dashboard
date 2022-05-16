@@ -19,9 +19,9 @@ function WebsiteTile(props) {
                     {website.friendly_name}
                   </div>
                   <div className="col-6 text-black website-logs align-items-center">
-                    Website Logs
+                    View Website
                   </div>
-                  <div className={`col-2 status-${website.status}`}>
+                  <div className={`col-2 status-red status-${website.status}`}>
                     {website.status}
                   </div>
                 </div>
