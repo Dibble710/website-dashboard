@@ -35,6 +35,15 @@ function Home() {
   }
 
   useEffect(() => {
+    const interval = setInterval(() => {
+      document.getElementById('paginate').click()
+    }, 30000);
+  
+    // Clear interval to represent memory leaks
+    return () => clearInterval(interval); 
+  }, [])
+
+  useEffect(() => {
     setOffset(50);
     getAllWebsites();
   }, []);
@@ -47,11 +56,11 @@ function Home() {
       ) : (
         <div className="main-container mt-2">
           {offset === 50 ? (
-            <button className="btn btn-info" onClick={() => onClick()}>
+            <button id="paginate" className="btn btn-info" onClick={() => onClick()}>
               Next Page
             </button>
           ) : (
-            <button className="btn btn-info" onClick={() => onClick()}>
+            <button id="paginate" className="btn btn-info" onClick={() => onClick()}>
               Go Back
             </button>
           )}
