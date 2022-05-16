@@ -46,9 +46,25 @@ function Home() {
         <Loader />
       ) : (
         <div className="main-container mt-2">
-          <button className="btn btn-info"onClick={() => onClick()}>Next Page</button>
+          {offset === 50 ? (
+            <button className="btn btn-info" onClick={() => onClick()}>
+              Next Page
+            </button>
+          ) : (
+            <button className="btn btn-info" onClick={() => onClick()}>
+              Go Back
+            </button>
+          )}
           <WebsiteTile websites={websites} />{" "}
-          <button className="btn btn-info" onClick={() => onClick()}>Next Page</button>
+          {offset === 50 ? (
+            <button className="btn btn-info" onClick={() => onClick()}>
+              Next Page
+            </button>
+          ) : (
+            <button className="btn btn-info" onClick={() => onClick()}>
+              Go Back
+            </button>
+          )}
         </div>
       )}
     </>
