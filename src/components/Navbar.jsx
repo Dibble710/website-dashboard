@@ -18,7 +18,7 @@ function Navbar(props) {
       <div className="header">
         There are {websitesUp} sites up and {websitesDown} sites down!
       </div>
-      <div className="title text-white text-center mt-5">
+      <div className="title text-white text-center">
         Digitizers Web Dashboard
       </div>
     </>

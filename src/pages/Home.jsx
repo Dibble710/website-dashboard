@@ -24,7 +24,7 @@ function Home() {
         const allWebsites = response.data.monitors;
         setWebsites(allWebsites);
         console.log(response.data);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((error) => console.log(error));
   };
@@ -32,7 +32,6 @@ function Home() {
   function onClick() {
     offset < 50 ? setOffset(50) : setOffset(0);
     getAllWebsites();
-
   }
 
   useEffect(() => {
@@ -46,9 +45,10 @@ function Home() {
       {loading ? (
         <Loader />
       ) : (
-        <div>
-          <button onClick={() => onClick()}>Next Page</button>
+        <div className="container mt-2">
+          <button className="btn btn-info"onClick={() => onClick()}>Next Page</button>
           <WebsiteTile websites={websites} />{" "}
+          <button className="btn btn-info" onClick={() => onClick()}>Next Page</button>
         </div>
       )}
     </>
