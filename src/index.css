@@ -34,6 +34,13 @@ a {
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.33);
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .website-tile {
   margin-top: 20px;
 }

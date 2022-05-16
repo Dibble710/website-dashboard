@@ -45,7 +45,7 @@ function Home() {
       {loading ? (
         <Loader />
       ) : (
-        <div className="container mt-2">
+        <div className="main-container mt-2">
           <button className="btn btn-info"onClick={() => onClick()}>Next Page</button>
           <WebsiteTile websites={websites} />{" "}
           <button className="btn btn-info" onClick={() => onClick()}>Next Page</button>
