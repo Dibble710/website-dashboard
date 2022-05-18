@@ -37,7 +37,7 @@ function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       document.getElementById('paginate').click()
-    }, 500000);
+    }, 5000);
   
     // Clear interval to prevent memory leaks
     return () => clearInterval(interval); 
