@@ -12,6 +12,7 @@ function Home() {
   const [websites, setWebsites] = useState("");
   const [offset, setOffset] = useState("0");
   const [loading, setLoading] = useState(true);
+  const [refresh, setRefresh] = useState(true);
 
   const getAllWebsites = () => {
     !loading && setLoading(true);
@@ -30,18 +31,23 @@ function Home() {
   };
 
   function onClick() {
-    offset < 50 ? setOffset(50) : setOffset(0);
+    if (offset < 50) {
+      setOffset(offset + 50);
+    } else if ((offset > 50) & (offset < 100)) {
+      setOffset(100);
+    } else setOffset(0);
+    // offset < 50 ? setOffset(50) : setOffset(0);
     getAllWebsites();
   }
 
   useEffect(() => {
     const interval = setInterval(() => {
-      document.getElementById('paginate').click()
+      document.getElementById("paginate").click();
     }, 5000);
-  
+
     // Clear interval to prevent memory leaks
-    return () => clearInterval(interval); 
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     setOffset(50);
@@ -50,17 +56,27 @@ function Home() {
 
   return (
     <>
-      <Navbar websites={websites} />
       {loading ? (
         <Loader />
       ) : (
         <div className="main-container mt-2">
+          {/* <button id="refresh" className="btn btn-info" onClick={() => setRefresh(!refresh)}>
+              Refresh
+            </button> */}
           {offset === 50 ? (
-            <button id="paginate" className="btn btn-info" onClick={() => onClick()}>
+            <button
+              id="paginate"
+              className="btn btn-info"
+              onClick={() => onClick()}
+            >
               Next Page
             </button>
           ) : (
-            <button id="paginate" className="btn btn-info" onClick={() => onClick()}>
+            <button
+              id="paginate"
+              className="btn btn-info"
+              onClick={() => onClick()}
+            >
               Go Back
             </button>
           )}

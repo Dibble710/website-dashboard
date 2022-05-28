@@ -1,5 +1,5 @@
 import React from "react";
-import {useState,  useEffect} from "react"
+import { useState, useEffect } from "react";
 
 function Navbar(props) {
   const websites = props.websites;
@@ -15,14 +15,23 @@ function Navbar(props) {
   websites && getStatus();
 
   const [scroll, setScroll] = useState(false);
- useEffect(() => {
-   window.addEventListener("scroll", () => {
-     setScroll(window.scrollY > 50);
-   });
- }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 50);
+    });
+  }, []);
 
   return (
     <>
+      <div className="navbar-2">
+        <div className="nav-container">
+            <div className="row "><i className="fa-solid fa-fire-flame-curved"></i></div>
+            <div className="row"><i className="fa-solid fa-wrench"></i></div>
+            <div className="row"><i className="fa-solid fa-file"></i></div>
+            <div className="row"><i className="fa-solid fa-cloud"></i></div>
+          </div>
+      </div>
+
       <div className={`header ${scroll ? "sticky" : ""}`}>
         There are {websitesUp} sites up and {websitesDown} sites down!
       

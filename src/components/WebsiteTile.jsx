@@ -1,9 +1,12 @@
 import React from "react";
 import { useEffect } from "react";
+import Navbar from "../components/Navbar"
 
 function WebsiteTile(props) {
+  const websites = props.websites
   return (
     <>
+    <Navbar websites={websites} />
       <div className="row website-tile">
         {props.websites &&
           props.websites.map((website) => (
